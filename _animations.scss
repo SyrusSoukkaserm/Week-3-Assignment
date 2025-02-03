@@ -1,0 +1,67 @@
+
+@keyframes bubbles { 
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-100%) rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(359deg);
+        
+    }
+}
+
+@mixin bubbleAnim ($duration: 20s, $iteration: infinite) 
+{
+    animation-name: bubbles;
+    animation-duration: $duration;
+    animation-iteration-count: $iteration;
+    animation-timing-function: ease;
+}
+
+@keyframes bubbles2 { //For circle1 to go higher
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-130%) rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(359deg);
+        
+    }
+}
+
+@mixin bubbleAnim2 ($duration: 20s, $iteration: infinite) 
+{
+    animation-name: bubbles2;
+    animation-duration: $duration;
+    animation-iteration-count: $iteration;
+    animation-timing-function: ease;
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0.7)
+    }
+
+    50% {
+        transform: scale(1.1)
+    }
+    100% {
+        transform: scale(1)
+    }
+}
+
+@mixin popInAnim ($duration: 4s, $iteration: 1) {
+    animation-name: popIn;
+    animation-timing-function: ease-in-out;
+    animation-duration: $duration;
+    animation-iteration-count: $iteration;
+    animation-fill-mode: forwards;
+}

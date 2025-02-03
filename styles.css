@@ -1,0 +1,270 @@
+@keyframes bubbles {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: translateY(-100%) rotate(180deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+@keyframes bubbles2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: translateY(-130%) rotate(180deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+@keyframes popIn {
+  0% {
+    transform: scale(0.7);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.container {
+  position: relative;
+  display: grid;
+  grid-template-areas: "navigation navigation" "title title" "art1 art1" "art2 art3" "art2 art3" "footer footer";
+  grid-template-columns: auto auto;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+#naviBar {
+  grid-area: navigation;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+  border-bottom: 5px solid white;
+}
+
+nav li {
+  display: inline-block;
+}
+
+nav a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  padding: 10px 20px;
+  transition: transform 1s ease, background-color 1s ease;
+}
+
+nav a:hover {
+  transform: scale(1.1);
+  background-color: #b3b2b2;
+  transition: transform 1.5s ease, background-color 1.5s ease;
+}
+
+#title {
+  display: block;
+  grid-area: title;
+  text-align: center;
+  font-size: 30px;
+  font-family: "Times New Roman", Times, serif;
+  border: solid 5px;
+}
+
+#art1 {
+  grid-area: art1;
+  justify-items: center;
+  padding: 10px;
+  text-align: center;
+  animation-name: popIn;
+  animation-timing-function: ease-in-out;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+#art1 img {
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-height: 60%;
+  margin: 20px;
+  max-width: 100%;
+  justify-content: center;
+  border-radius: 5%;
+  padding: 10px;
+  transition: transform 3s ease;
+}
+
+#art1 img:hover {
+  transform: scale(1.1);
+}
+
+#art1 img:hover + #credit1 {
+  transform: translateY(10px);
+}
+
+#credit1 {
+  width: 50%;
+  transition: transform 3s ease;
+}
+
+#art2 {
+  grid-area: art2;
+  text-align: center;
+  justify-items: center;
+  animation-name: popIn;
+  animation-timing-function: ease-in-out;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+#art2 img {
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-height: 60%;
+  max-width: 90%;
+  justify-content: center;
+  border-radius: 15%;
+  padding: 10px;
+  transition: transform 2s ease;
+}
+
+#art2 img:hover {
+  transform: scale(1.1);
+}
+
+#art2 img:hover + #credit2 {
+  transform: translateY(10px);
+}
+
+#credit2 {
+  padding: 10px;
+  transition: transform 2s ease;
+}
+
+#art3 {
+  grid-area: art3;
+  text-align: center;
+  justify-items: center;
+  animation-name: popIn;
+  animation-timing-function: ease-in-out;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+#art3 img {
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-height: 60%;
+  max-width: 120%;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 15%;
+  transition: transform 2s ease;
+}
+
+#art3 img:hover {
+  transform: scale(1.1);
+}
+
+#art3 img:hover + #credit3 {
+  transform: translateY(20px);
+}
+
+#credit3 {
+  transition: 2s ease;
+  width: 50%;
+}
+
+#circle1 {
+  position: absolute;
+  z-index: -1;
+  bottom: 50%;
+  left: 0px;
+  background: linear-gradient(#f7b32d, #f3f362, white);
+  border-radius: 100%;
+  height: 350px;
+  width: 350px;
+  animation-delay: 1s;
+  animation-name: bubbles2;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+}
+
+#circle2 {
+  position: absolute;
+  z-index: -1;
+  top: 40%;
+  left: 80%;
+  background: linear-gradient(#f7b32d, #f3f362, white);
+  border-radius: 100%;
+  height: 200px;
+  width: 200px;
+  animation-delay: 2s;
+  animation-name: bubbles;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+}
+
+#circle3 {
+  position: absolute;
+  z-index: -1;
+  top: 80%;
+  left: 50%;
+  background: linear-gradient(#f7b32d, #f3f362, white);
+  border-radius: 100%;
+  height: 200px;
+  width: 200px;
+  animation-delay: 3s;
+  animation-name: bubbles;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+}
+
+#circle4 {
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 20%;
+  background: linear-gradient(#f7b32d, #f3f362, white);
+  border-radius: 100%;
+  height: 100px;
+  width: 100px;
+  animation-delay: 4s;
+  animation-name: bubbles;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+}
+
+#circle5 {
+  position: absolute;
+  z-index: -1;
+  top: 70%;
+  left: 90%;
+  background: linear-gradient(#f7b32d, #f3f362, white);
+  border-radius: 100%;
+  height: 100px;
+  width: 100px;
+  animation-delay: 3s;
+  animation-name: bubbles;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+}/*# sourceMappingURL=styles.css.map */
